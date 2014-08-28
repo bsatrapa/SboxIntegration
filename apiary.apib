@@ -1,0 +1,4372 @@
+FORMAT: 1A
+HOST: http://demorwe.a-box.cz
+
+# SboxIntegration
+SIM sales support service
+
+# Group Order
+
+## /v1/order/list
+
+### POST
+Seznam objednávek
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "orderList": [
+                    {
+                        "id": 35,
+                        "pcn": "18104852",
+                        "fcn": "54452836",
+                        "type": "Dodatková",
+                        "state": "input",
+                        "loyality": "332211",
+                        "companyName": null,
+                        "name": "Kang Sucsaza",
+                        "companyRegistrationNumber": null,
+                        "idNumber": "6762233753",
+                        "delivery": 0,
+                        "msisdn": null,
+                        "ported": 0,
+                        "created": "2014-08-25",
+                        "modified": "2014-08-25",
+                        "createdUser": "james",
+                        "modifiedUser": "james"
+                    },
+                    {
+                        "id": 1,
+                        "pcn": "18104852",
+                        "fcn": "58344916",
+                        "type": "Nová",
+                        "state": "input",
+                        "loyality": null,
+                        "companyName": null,
+                        "name": " ",
+                        "companyRegistrationNumber": null,
+                        "idNumber": null,
+                        "delivery": 0,
+                        "msisdn": null,
+                        "ported": 0,
+                        "created": "2014-08-25",
+                        "modified": "2014-08-25",
+                        "createdUser": "james",
+                        "modifiedUser": "james"
+                    },
+                    {
+                        "id": 2,
+                        "pcn": "18104852",
+                        "fcn": "58344916",
+                        "type": "Nová",
+                        "state": "input",
+                        "loyality": null,
+                        "companyName": null,
+                        "name": " ",
+                        "companyRegistrationNumber": null,
+                        "idNumber": null,
+                        "delivery": 0,
+                        "msisdn": null,
+                        "ported": 0,
+                        "created": "2014-08-25",
+                        "modified": "2014-08-25",
+                        "createdUser": "james",
+                        "modifiedUser": "james"
+                    }
+                ]
+            }
+        }
+
+## /v1/order/item/create
+
+### POST
+Založení prázdné objednávky.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "orderId": 50
+            }
+        }
+
+## /v1/order/item/detail
+
+### POST
+Získání existující objednávky.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 51
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "order": {
+                    "id": 51,
+                    "type": "NEW",
+                    "state": "input",
+                    "stateMessage": "",
+                    "poPo": null,
+                    "deposit": 0,
+                    "customer": {
+                        "fcn": null,
+                        "type": "FO",
+                        "solus": 0,
+                        "positiveSolus": 0,
+                        "isPoliticallyExposed": 0,
+                        "created": null,
+                        "contact": {
+                            "companyRegistrationNumber": null,
+                            "companyTaxNumber": null,
+                            "birthDate": null,
+                            "birthNumber": null,
+                            "companyName": null,
+                            "email": null,
+                            "firstName": null,
+                            "lastName": null,
+                            "lastName5": null,
+                            "salutation": null,
+                            "nationality": "CZ",
+                            "note": null,
+                            "phone": null,
+                            "title": 0,
+                            "titleAfter": 0,
+                            "passportNumber": null,
+                            "password": null,
+                            "loyality": null,
+                            "discount": null,
+                            "billingArrangement": {
+                                "paymentMethod": -2,
+                                "invoiceType": "P",
+                                "delivery": 0,
+                                "account": null,
+                                "bankCode": null,
+                                "address": {
+                                    "street": null,
+                                    "streetNumberBlue": null,
+                                    "streetNumberRed": null,
+                                    "zip": null,
+                                    "region": null,
+                                    "city": null,
+                                    "uirId": null
+                                },
+                                "subscriberList": [
+                                    {
+                                        "id": 71,
+                                        "state": null,
+                                        "product": null,
+                                        "msisdn": {
+                                            "msisdn": ""
+                                        },
+                                        "iccid": null,
+                                        "pcn": null,
+                                        "ported": 0,
+                                        "cvop": null,
+                                        "master": 1,
+                                        "jts": 0,
+                                        "mkt1": 0,
+                                        "mkt2": 1,
+                                        "mkt3": 1,
+                                        "created": null,
+                                        "modified": "2014-08-25",
+                                        "termination": null,
+                                        "provisioningDate": null
+                                    }
+                                ]
+                            },
+                            "address": {
+                                "street": null,
+                                "streetNumberBlue": null,
+                                "streetNumberRed": null,
+                                "zip": null,
+                                "region": null,
+                                "city": null,
+                                "uirId": null
+                            },
+                            "companyAddress": {
+                                "street": null,
+                                "streetNumberBlue": null,
+                                "streetNumberRed": null,
+                                "zip": null,
+                                "region": null,
+                                "city": null,
+                                "uirId": null
+                            },
+                            "documentList": [
+                                {
+                                    "id": 103,
+                                    "documentType": null,
+                                    "documentNumber": null,
+                                    "documentValidTo": null
+                                }
+                            ]
+                        }
+                    },
+                    "createdUser": {
+                        "username": "james",
+                        "roles": [
+                            "super_admin"
+                        ],
+                        "domain": "tmcz",
+                        "firstName": "James",
+                        "lastName": "Bond",
+                        "deleted": 0
+                    },
+                    "created": [
+                        "2014-08-25 00:00:00",
+                        3,
+                        "Europe\/Prague"
+                    ],
+                    "modifiedUser": {
+                        "username": "james",
+                        "roles": [
+                            "super_admin"
+                        ],
+                        "domain": "tmcz",
+                        "firstName": "James",
+                        "lastName": "Bond",
+                        "deleted": 0
+                    }
+                },
+                "locked": {
+                    "state": true,
+                    "stateMessage": true,
+                    "deposit": true,
+                    "orderFormId": true,
+                    "created": true,
+                    "customer": {
+                        "fcn": true,
+                        "created": true,
+                        "contact": {
+                            "billingArrangement": {
+                                "address": {
+                                    "uirId": true,
+                                    "region": true
+                                },
+                                "subscriberList": [
+                                    {
+                                        "state": true,
+                                        "pcn": true
+                                    }
+                                ]
+                            },
+                            "address": {
+                                "uirId": true,
+                                "region": true
+                            },
+                            "companyAddress": {
+                                "uirId": true,
+                                "region": true
+                            }
+                        }
+                    }
+                },
+                "activityList": [
+                    {
+                        "id": 473,
+                        "type": "pcn-retrieve",
+                        "params": {
+                            "subscriberId": 71
+                        }
+                    },
+                    {
+                        "id": 474,
+                        "type": "fcn-retrieve",
+                        "params": {
+                            "orderId": 51
+                        }
+                    }
+                ]
+            }
+        }
+
+## /v1/order/item/edit
+
+### POST
+Editace existující objednávky.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "order": {
+                "id": 52,
+                "poPo": null,
+                "customer": {
+                    "type": "FO",
+                    "solus": 0,
+                    "positiveSolus": 0,
+                    "isPoliticallyExposed": 0,
+                    "contact": {
+                        "companyRegistrationNumber": null,
+                        "companyTaxNumber": null,
+                        "birthDate": null,
+                        "birthNumber": null,
+                        "companyName": null,
+                        "email": null,
+                        "firstName": null,
+                        "lastName": null,
+                        "lastName5": null,
+                        "salutation": null,
+                        "nationality": "CZ",
+                        "note": null,
+                        "phone": null,
+                        "title": 0,
+                        "titleAfter": 0,
+                        "passportNumber": null,
+                        "password": null,
+                        "loyality": null,
+                        "discount": null,
+                        "billingArrangement": {
+                            "paymentMethod": -2,
+                            "invoiceType": "P",
+                            "delivery": 0,
+                            "account": null,
+                            "bankCode": null,
+                            "subscriberList": [
+                                {
+                                    "id": 72,
+                                    "product": null,
+                                    "ported": 0,
+                                    "cvop": null,
+                                    "master": 1,
+                                    "jts": 0,
+                                    "mkt1": 0,
+                                    "mkt2": 1,
+                                    "mkt3": 1,
+                                    "provisioningDate": null
+                                }
+                            ]
+                        },
+                        "documentList": [
+                            {
+                                "documentType": null,
+                                "documentNumber": null,
+                                "documentValidTo": null
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+        
+            }
+        }
+
+## /v1/order/item/edit?errors
+
+### POST
+Editace existující objednávky - chyba na vstupu.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "order": {
+                "id": 52,
+                "poPo": null,
+                "customer": {
+                    "type": "FO",
+                    "solus": 0,
+                    "positiveSolus": 0,
+                    "isPoliticallyExposed": 0,
+                    "contact": {
+                        "companyRegistrationNumber": null,
+                        "companyTaxNumber": null,
+                        "birthDate": null,
+                        "birthNumber": null,
+                        "companyName": null,
+                        "email": null,
+                        "firstName": null,
+                        "lastName": null,
+                        "lastName5": null,
+                        "salutation": null,
+                        "nationality": "CZ",
+                        "note": null,
+                        "phone": null,
+                        "title": 0,
+                        "titleAfter": 0,
+                        "passportNumber": null,
+                        "password": null,
+                        "loyality": null,
+                        "discount": null,
+                        "billingArrangement": {
+                            "paymentMethod": -2,
+                            "invoiceType": "P",
+                            "delivery": 0,
+                            "account": null,
+                            "bankCode": null,
+                            "subscriberList": [
+                                {
+                                    "id": 72,
+                                    "product": null,
+                                    "ported": 0,
+                                    "cvop": null,
+                                    "master": 1,
+                                    "jts": 0,
+                                    "mkt1": 0,
+                                    "mkt2": 1,
+                                    "mkt3": 1,
+                                    "provisioningDate": null
+                                }
+                            ]
+                        },
+                        "documentList": [
+                            {
+                                "documentType": null,
+                                "documentNumber": null,
+                                "documentValidTo": null
+                            }
+                        ]
+                    }
+                }
+            },
+            "customer": {
+                "contact": {
+                    "birthNumber": "NEPLATNE"
+                }
+            }
+        }
+
++ Response 200 (application/json)
+
+        {
+            "errors": {
+                "message": "Neznámá chyba.",
+                "code": "UNKNOWN",
+                "details": "Neznámá chyba. (1408984209.7591)"
+            }
+        }
+
+## /v1/order/item/requirements
+
+### POST
+Získání povinných údajů.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "type": "FO"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "customer": {
+                    "fcn": true,
+                    "type": true,
+                    "contact": {
+                        "birthNumber": true,
+                        "firstName": true,
+                        "lastName": true,
+                        "salutation": true,
+                        "nationality": true,
+                        "password": true,
+                        "loyality": true,
+                        "billingArrangement": {
+                            "paymentMethod": true,
+                            "invoiceType": true,
+                            "address": {
+                                "street": true,
+                                "zip": true,
+                                "city": true,
+                                "uirId": true
+                            },
+                            "subscriberList": [
+                                {
+                                    "product": true,
+                                    "msisdn": {
+                                        "msisdn": true
+                                    },
+                                    "iccid": true,
+                                    "pcn": true
+                                }
+                            ]
+                        },
+                        "address": {
+                            "street": true,
+                            "zip": true,
+                            "city": true,
+                            "uirId": true
+                        },
+                        "companyAddress": {
+                            "street": true,
+                            "zip": true,
+                            "city": true,
+                            "uirId": true
+                        },
+                        "documentList": [
+                            {
+                                "documentType": true,
+                                "documentNumber": true,
+                                "documentValidTo": true
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+
+# Group Duplicita zákazníka
+
+Otestuje, zda už v systému existuje zákazník se zadanými údaji. Údaje před ověřením validuje. Klíče neodpovídající typu jsou nepovinné.
+
+## /v1/order/item/is-customer-active
+
+### POST
+Nový zákazník.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 45,
+            "type": "PO",
+            "companyRegistrationNumber": null,
+            "companyTaxNumber": null,
+            "birthNumber": null,
+            "documentList": [
+                {
+                    "id": 638,
+                    "documentType": 1,
+                    "documentNumber": null,
+                    "documentValidTo": null
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+        
+            }
+        }
+
+## /v1/order/item/is-customer-active?order
+
+### POST
+Zákazník už má objednávku.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 46,
+            "type": "PO",
+            "companyRegistrationNumber": "64572366",
+            "companyTaxNumber": null,
+            "birthNumber": null,
+            "documentList": [
+                {
+                    "id": 638,
+                    "documentType": 1,
+                    "documentNumber": null,
+                    "documentValidTo": null
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+        {
+            "errors": {
+                "message": "Zadaný zákazník již je evidován.",
+                "data": {
+                    "field": "companyRegistrationNumber",
+                    "id": null,
+                    "orderId": 45
+                }
+            }
+        }
+
+## /v1/order/item/is-customer-active?service
+
+### POST
+Zákazník už existuje.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 47,
+            "type": "PO",
+            "companyRegistrationNumber": "64572374",
+            "companyTaxNumber": null,
+            "birthNumber": null,
+            "documentList": [
+                {
+                    "id": 638,
+                    "documentType": 1,
+                    "documentNumber": null,
+                    "documentValidTo": null
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+        {
+            "errors": {
+                "message": "Zadaný zákazník již je evidován.",
+                "data": {
+                    "field": "companyRegistrationNumber",
+                    "id": null,
+                    "serviceId": 22
+                }
+            }
+        }
+
+# Group Adresy
+
+Možné výsledky jsou tři, odpověď bude mít různý obsah:  
+ - OK - id, původní billingAddress, modified = původní billingAddress doplněná o region a uidId  
+ - KO - id, původní billingAddress a pole chyb errors  
+ - MODIFIED - id, původní billingAddress, modified (jako v OK) a pole errors s popisem změn
+
+
+## /v1/address/validate
+
+### POST
+Přiřadí do objednávky zaslanou fakturační adresu a doplní region a uirId.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "orderId": 33,
+            "type": "billing",
+            "address": {
+                "city": "Litomyšl",
+                "street": "8. května",
+                "streetNumberBlue": "4",
+                "streetNumberRed": "820",
+                "zip": "75001"
+            }
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "address": {
+                    "city": "Litomyšl",
+                    "street": "8. května",
+                    "streetNumberBlue": "4",
+                    "streetNumberRed": "820",
+                    "zip": "75001"
+                },
+                "modified": {
+                    "street": "8. května",
+                    "streetNumberBlue": "4",
+                    "streetNumberRed": "820",
+                    "zip": "57001",
+                    "region": "Pardubický",
+                    "city": "Litomyšl",
+                    "uirId": "7425617"
+                }
+            }
+        }
+
+## /v1/address/validate?modified
+
+### POST
+Validace bez korekce adresy - pravděpodobně nenastává.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "orderId": 33,
+            "type": "contact",
+            "address": {
+                "city": "Litomyšl",
+                "street": "8.května",
+                "streetNumberBlue": "",
+                "streetNumberRed": "",
+                "zip": "75001"
+            }
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "address": {
+                    "city": "Litomyšl",
+                    "street": "8.května",
+                    "streetNumberBlue": "",
+                    "streetNumberRed": "",
+                    "zip": "75001"
+                },
+                "modified": {
+                    "street": "8. května",
+                    "streetNumberBlue": "4",
+                    "streetNumberRed": "820",
+                    "zip": "57001",
+                    "region": "Litomyšl - Zahájí",
+                    "city": "Litomyšl",
+                    "uirId": "2425617"
+                }
+            },
+            "errors": {
+                "message": "Adresa byla pozměněna."
+            }
+        }
+
+## /v1/address/validate?errors
+
+### POST
+Validace adresy s chybou.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "orderId": 33,
+            "type": "contact",
+            "address": {
+                "city": "Litomyšl",
+                "street": null,
+                "streetNumberBlue": "",
+                "streetNumberRed": "820",
+                "zip": "NEPLATNE"
+            }
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "address": {
+                    "city": "Litomyšl",
+                    "street": null,
+                    "streetNumberBlue": "",
+                    "streetNumberRed": "820",
+                    "zip": "NEPLATNE"
+                }
+            },
+            "errors": {
+                "address": {
+                    "zip": "Platné PSČ musí obsahovat právě 5 číslic."
+                }
+            }
+        }
+
+## /v1/address/reset
+
+### POST
+Vyresetování přiřazené adresy.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "type": "billing",
+            "orderId": 33
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+        
+            }
+        }
+
+## /v1/address/reset?errors
+
+### POST
+Vyresetování přiřazené adresy - neúspěch.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "type": "non-type",
+            "orderId": 33
+        }
+
++ Response 200 (application/json)
+
+        {
+            "errors": {
+                "type": "Neznámý typ adresy: non-type"
+            }
+        }
+
+# Group MSISDN
+
+## /v1/msisdn/options
+
+### POST
+Nabídka telefonních čísel - nastartování akce
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": false,
+                "status": "created",
+                "activityId": 428
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/msisdn/options?polling
+
+### POST
+Nabídka telefonních čísel - probíhající polling
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 428
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": false,
+                "status": "polling",
+                "activityId": 428
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/msisdn/options?success
+
+### POST
+Nabídka telefonních čísel - úspěšný polling
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 428
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": true,
+                "status": "done",
+                "activityId": 428
+            },
+            "result": {
+                "msisdns": [
+                    "797005005",
+                    "797005015",
+                    "797005025",
+                    "797005005",
+                    "797005015",
+                    "797005025"
+                ]
+            }
+        }
+
+## /v1/msisdn/options?errors
+
+### POST
+Nabídka telefonních čísel - neúspěšný polling
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 428
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": true,
+                "status": "failed",
+                "activityId": 428
+            },
+            "result": {
+                "message": "Order subscriber id '549' already has locking in progress '1816'.",
+                "code": "LOCKING_IN_PROCESS"
+            }
+        }
+
+## /v1/msisdn/lock
+
+### POST
+Uzamknutí vybraného msisdn - nastartování akce.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "subscriberId": 55,
+            "msisdn": "797005015"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": false,
+                "status": "created",
+                "activityId": 427
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/msisdn/lock?polling
+
+### POST
+Uzamknutí vybraného msisdn - probíhající polling.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 427
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": false,
+                "status": "polling",
+                "activityId": 427
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/msisdn/lock?success
+
+### POST
+Uzamknutí vybraného msisdn - úspěšný polling.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 427
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": true,
+                "status": "done",
+                "activityId": 427
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/msisdn/lock?errors
+
+### POST
+Uzamknutí vybraného msisdn - neúspěšný polling.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 427
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": true,
+                "status": "failed",
+                "activityId": 427
+            },
+            "errors": {
+                "message": "Popis chyby."
+            }
+        }
+
+## /v1/msisdn/port-in
+
+### POST
+Vložení portovaného čísla - nastartování akce.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "subscriberId": 56,
+            "msisdn": "666777888"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": false,
+                "status": "created",
+                "activityId": 432
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/msisdn/port-in?polling
+
+### POST
+Vložení portovaného čísla - probíhající polling.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 432
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": false,
+                "status": "polling",
+                "activityId": 432
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/msisdn/port-in?success
+
+### POST
+Vložení portovaného čísla - úspěšný polling.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 432
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": true,
+                "status": "done",
+                "activityId": 432
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/msisdn/port-in?errors
+
+### POST
+Vložení portovaného čísla - neúspěšný polling.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 432
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": true,
+                "status": "failed",
+                "activityId": 432
+            },
+            "errors": {
+                "message": "Popis chyby."
+            }
+        }
+
+# Group Datum portace
+
+## /v1/port-in-date/list
+
+### POST
+Seznam datumů pro portaci.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "delivery": 0
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "allowedDateList": [
+                    "2014-08-29",
+                    "2014-09-01",
+                    "2014-09-02",
+                    "2014-09-03",
+                    "2014-09-04",
+                    "2014-09-05",
+                    "2014-09-08",
+                    "2014-09-09",
+                    "2014-09-10",
+                    "2014-09-11",
+                    "2014-09-12",
+                    "2014-09-15",
+                    "2014-09-16",
+                    "2014-09-17",
+                    "2014-09-18",
+                    "2014-09-19",
+                    "2014-09-22",
+                    "2014-09-23",
+                    "2014-09-24",
+                    "2014-09-25",
+                    "2014-09-26",
+                    "2014-09-29",
+                    "2014-09-30",
+                    "2014-10-01",
+                    "2014-10-02",
+                    "2014-10-03",
+                    "2014-10-06",
+                    "2014-10-07",
+                    "2014-10-08",
+                    "2014-10-09",
+                    "2014-10-10",
+                    "2014-10-13",
+                    "2014-10-14",
+                    "2014-10-15",
+                    "2014-10-16",
+                    "2014-10-17",
+                    "2014-10-20",
+                    "2014-10-21",
+                    "2014-10-22",
+                    "2014-10-23"
+                ]
+            }
+        }
+
+## /v1/port-in-date/change
+
+### POST
+Změna datumu pro portaci - nastartování akce.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "subscriberId": 73,
+            "wishDate": "2014-10-10"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": false,
+                "status": "waiting",
+                "activityId": 479
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/port-in-date/change?polling
+
+### POST
+Změna datumu pro portaci - probíhající polling.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 479
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": false,
+                "status": "polling",
+                "activityId": 479
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/port-in-date/change?success
+
+### POST
+Změna datumu pro portaci - úspěšný polling.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 479
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": true,
+                "status": "done",
+                "activityId": 479
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/port-in-date/change?errors
+
+### POST
+Změna datumu pro portaci - neúspěšný polling.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 482
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": true,
+                "status": "failed",
+                "activityId": 482
+            },
+            "errors": {
+                "message": "Expecting one running activity 'port-in-date-change' for subscriber id '73' got 0.",
+                "code": "ERROR_ACTIVITY_INCONSISTENT"
+            }
+        }
+
+# Group ICCID
+
+## /v1/iccid/lock
+
+### POST
+Uzamknutí vybrané simky - nastartování akce.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "subscriberId": 54,
+            "iccid": "6867696061686769606"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": false,
+                "status": "created",
+                "activityId": 424
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/iccid/lock?polling
+
+### POST
+Uzamknutí vybrané simky - probíhající polling.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 424
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": false,
+                "status": "polling",
+                "activityId": 424
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/iccid/lock?success
+
+### POST
+Uzamknutí vybrané simky - úspěšný polling.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 424
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": true,
+                "status": "done",
+                "activityId": 424
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/iccid/lock?errors
+
+### POST
+Uzamknutí vybrané simky - neúspěšný polling.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 424
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": true,
+                "status": "failed",
+                "activityId": 424
+            },
+            "errors": {
+                "message": "Popis chyby."
+            }
+        }
+
+# Group Credit check
+
+## /v1/order/action/credit-check
+
+### POST
+Úspěšný credit check existující objednávky.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 44
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "message": "credit check ok"
+            }
+        }
+
+## /v1/order/action/credit-check?deposit
+
+### POST
+Credit check existující objednávky - se zálohou.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 44
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "message": "credit check fail deposit"
+            }
+        }
+
+## /v1/order/action/credit-check?denied
+
+### POST
+Credit check existující objednávky - zamítnutá.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 44
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "message": "credit check fail denied"
+            }
+        }
+
+## /v1/order/action/credit-check?errors
+
+### POST
+Credit check existující objednávky - neúspěšný pokus.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 44
+        }
+
++ Response 200 (application/json)
+
+        {
+            "errors": {
+                "message": "Objednávka není ve stavu pro credit check."
+            }
+        }
+
+## /v1/order/action/credit-check-reset
+
+### POST
+Návrat do stavu input.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 44
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+        
+            }
+        }
+
+## /v1/order/action/credit-check-reset?errors
+
+### POST
+Neúspěšný návrat do stavu input.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 44
+        }
+
++ Response 200 (application/json)
+
+        {
+            "errors": {
+                "message": "Objednávka není ve stavu pro reset credit checku."
+            }
+        }
+
+## /v1/order/action/credit-check-override
+
+### POST
+Posune objednávku do stavu Credit check override deposit nebo Credit check override vip.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 43,
+            "type": "deposit"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+        
+            }
+        }
+
+## /v1/order/action/credit-check-override?errors
+
+### POST
+Neúspěšný credit check override.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 43,
+            "type": "vip"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "errors": {
+                "message": "Objednávka není ve stavu pro credit check override."
+            }
+        }
+
+# Group Contract
+
+## /v1/order/action/print
+
+### POST
+Převedení objednávky do stavu CONTRACT.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 48
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+        
+            }
+        }
+
+## /v1/order/action/print?errors
+
+### POST
+Neúspěšný tisk smlouvy.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 48
+        }
+
++ Response 200 (application/json)
+
+        {
+            "errors": {
+                "message": "Objednávka není ve stavu pro tisk smlouvy."
+            }
+        }
+
+## /v1/order/contract/detail
+
+### POST
+Získání PDFka se smlouvou.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 48
+        }
+
++ Response 200 (application/pdf)
+
+        Binary data.
+
+## /v1/order/action/print-reset
+
+### POST
+Návrat do stavu před tisk.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 48
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+        
+            }
+        }
+
+## /v1/order/action/print-reset?errors
+
+### POST
+Neúspěšný návrat do stavu před tisk.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 48
+        }
+
++ Response 200 (application/json)
+
+        {
+            "errors": {
+                "message": "Objednávka není ve stavu pro návrat před tisk."
+            }
+        }
+
+## /v1/order/action/sign
+
+### POST
+Převedení objednávky do stavu CONTRACT SIGNED.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 49
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+        
+            }
+        }
+
+## /v1/order/action/sign?errors
+
+### POST
+Neúspěšné podepsání smlouvy.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 49
+        }
+
++ Response 200 (application/json)
+
+        {
+            "errors": {
+                "message": "Objednávka není ve stavu pro podpis."
+            }
+        }
+
+# Group Cancel
+
+## /v1/order/action/cancel
+
+### POST
+Převedení objednávky do stavu CANCEL.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 42
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+        
+            }
+        }
+
+## /v1/order/action/cancel?errors
+
+### POST
+Neúspěšné převedení objednávky do stavu CANCEL.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 42
+        }
+
++ Response 200 (application/json)
+
+        {
+            "errors": {
+                "message": "Objednávka není ve stavu pro storno."
+            }
+        }
+
+# Group Customer
+
+## /v1/customer/list
+
+### POST
+Seznam zákazníků
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "customerList": [
+                    {
+                        "id": 1,
+                        "fcn": "58344916",
+                        "loyality": "123",
+                        "type": "FO",
+                        "companyName": null,
+                        "firstName": "bruce",
+                        "lastName": "lee test 0",
+                        "companyRegistrationNumber": null,
+                        "companyTaxNumber": null,
+                        "idNumber": "6661075542",
+                        "created": "2014-08-25",
+                        "state": "active",
+                        "discount": null
+                    },
+                    {
+                        "id": 2,
+                        "fcn": "58344916",
+                        "loyality": "123",
+                        "type": "FOP",
+                        "companyName": "Nová společnost 1",
+                        "firstName": "bruce",
+                        "lastName": "lee test 1",
+                        "companyRegistrationNumber": "00195766",
+                        "companyTaxNumber": null,
+                        "idNumber": "6762233621",
+                        "created": "2014-08-25",
+                        "state": "active",
+                        "discount": null
+                    },
+                    {
+                        "id": 3,
+                        "fcn": "58344916",
+                        "loyality": "123",
+                        "type": "FOPc",
+                        "companyName": "Nová společnost 2",
+                        "firstName": "bruce",
+                        "lastName": "lee test 2",
+                        "companyRegistrationNumber": "63998033",
+                        "companyTaxNumber": null,
+                        "idNumber": "1111112",
+                        "created": "2014-08-25",
+                        "state": "active",
+                        "discount": null
+                    }
+                ]
+            }
+        }
+
+## /v1/customer/item/detail
+
+### POST
+Detail existujícího zákazníka.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 21
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "customer": {
+                    "fcn": "58754404",
+                    "type": "FO",
+                    "solus": 1,
+                    "positiveSolus": 1,
+                    "isPoliticallyExposed": 0,
+                    "created": "2014-08-25",
+                    "contact": {
+                        "companyRegistrationNumber": null,
+                        "companyTaxNumber": null,
+                        "birthDate": "1967-12-23",
+                        "birthNumber": "6762233786",
+                        "companyName": null,
+                        "email": null,
+                        "firstName": "Aah",
+                        "lastName": "Feqhideb",
+                        "lastName5": "Testere",
+                        "salutation": 2,
+                        "nationality": "CZ",
+                        "note": "Automatický test: DocCustomerItemDetailTest, on: 25.08.2014 18:28:37",
+                        "phone": "668567777",
+                        "title": 1,
+                        "titleAfter": 2,
+                        "passportNumber": "12345679",
+                        "password": "1223",
+                        "loyality": "332211",
+                        "discount": 0,
+                        "billingArrangement": {
+                            "paymentMethod": -2,
+                            "invoiceType": "P",
+                            "delivery": 0,
+                            "account": "111 50",
+                            "bankCode": "0100",
+                            "address": {
+                                "street": "8. května",
+                                "streetNumberBlue": "820",
+                                "streetNumberRed": "4",
+                                "zip": "57001",
+                                "region": "Pardubický",
+                                "city": "Litomyšl",
+                                "uirId": "12324"
+                            },
+                            "subscriberList": [
+                                {
+                                    "id": 35,
+                                    "state": "active",
+                                    "product": "T2",
+                                    "msisdn": {
+                                        "msisdn": "642501383"
+                                    },
+                                    "iccid": "6678127124905586688",
+                                    "pcn": "91798545",
+                                    "ported": 0,
+                                    "cvop": null,
+                                    "master": 0,
+                                    "jts": 0,
+                                    "mkt1": 0,
+                                    "mkt2": 1,
+                                    "mkt3": 1,
+                                    "created": "2014-08-25",
+                                    "modified": "2014-08-25",
+                                    "termination": null,
+                                    "provisioningDate": null
+                                },
+                                {
+                                    "id": 36,
+                                    "state": "provisioning",
+                                    "product": "T3",
+                                    "msisdn": {
+                                        "msisdn": "724088204"
+                                    },
+                                    "iccid": "6992790926247835648",
+                                    "pcn": "42677665",
+                                    "ported": 1,
+                                    "cvop": "816273722",
+                                    "master": 1,
+                                    "jts": 0,
+                                    "mkt1": 0,
+                                    "mkt2": 1,
+                                    "mkt3": 1,
+                                    "created": null,
+                                    "modified": "2014-08-25",
+                                    "termination": null,
+                                    "provisioningDate": "2014-08-25"
+                                }
+                            ]
+                        },
+                        "address": {
+                            "street": "8. května",
+                            "streetNumberBlue": "820",
+                            "streetNumberRed": "4",
+                            "zip": "57001",
+                            "region": "Pardubický",
+                            "city": "Litomyšl",
+                            "uirId": "12324"
+                        },
+                        "companyAddress": {
+                            "street": null,
+                            "streetNumberBlue": null,
+                            "streetNumberRed": null,
+                            "zip": null,
+                            "region": null,
+                            "city": null,
+                            "uirId": null
+                        },
+                        "documentList": [
+                            {
+                                "id": 36,
+                                "documentType": 16,
+                                "documentNumber": "12345679",
+                                "documentValidTo": "2077-07-07"
+                            },
+                            {
+                                "id": 37,
+                                "documentType": 2,
+                                "documentNumber": "8430212120",
+                                "documentValidTo": "2088-08-08"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+
+## /v1/customer/action/create-add-order
+
+### POST
+Vytvoření objednávky pro přidání služby k existujícímu zákazníkovi.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 18
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "orderId": 35
+            }
+        }
+
+## /v1/customer/action/create-discount
+
+### POST
+Vytvoření slevy u existujícího zákazníka bez slevy.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 19
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": false,
+                "status": "created",
+                "activityId": 387
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/customer/action/create-discount?polling
+
+### POST
+Vytvoření slevy u existujícího zákazníka bez slevy - probíhající polling.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 387
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": false,
+                "status": "polling",
+                "activityId": 387
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/customer/action/create-discount?success
+
+### POST
+Vytvoření slevy u existujícího zákazníka bez slevy - úspěšný polling.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 387
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": true,
+                "status": "done",
+                "activityId": 387
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/customer/action/create-discount?errors
+
+### POST
+Vytvoření slevy u existujícího zákazníka bez slevy - neúspěšný polling.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 387
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": true,
+                "status": "failed",
+                "activityId": 387
+            },
+            "errors": {
+                "message": "Popis chyby."
+            }
+        }
+
+## /v1/customer/action/delete-discount
+
+### POST
+Zrušení slev u existujícího zákazníka bez slevy.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 20
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": false,
+                "status": "created",
+                "activityId": 405
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/customer/action/delete-discount?polling
+
+### POST
+Zrušení slev u existujícího zákazníka bez slevy - probíhající polling.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 405
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": false,
+                "status": "polling",
+                "activityId": 405
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/customer/action/delete-discount?success
+
+### POST
+Zrušení slev u existujícího zákazníka bez slevy - úspěšný polling.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 405
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": true,
+                "status": "done",
+                "activityId": 405
+            },
+            "result": {
+        
+            }
+        }
+
+## /v1/customer/action/delete-discount?errors
+
+### POST
+Zrušení slev u existujícího zákazníka bez slevy - neúspěšný polling.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "activityId": 405
+        }
+
++ Response 200 (application/json)
+
+        {
+            "callStatus": {
+                "finished": true,
+                "status": "failed",
+                "activityId": 405
+            },
+            "errors": {
+                "message": "Popis chyby."
+            }
+        }
+
+# Group Service
+
+## /v1/service/list
+
+### POST
+Seznam služeb
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "serviceList": [
+                    {
+                        "id": 1,
+                        "fcn": "58344916",
+                        "pcn": "18104852",
+                        "msisdn": "797005015",
+                        "iccid": "6867696061686769606",
+                        "product": "PRE Garant",
+                        "created": "2014-08-25",
+                        "modified": "2014-08-25",
+                        "state": "active"
+                    },
+                    {
+                        "id": 2,
+                        "fcn": "58344916",
+                        "pcn": "18104852",
+                        "msisdn": "797005015",
+                        "iccid": "6867696061686769606",
+                        "product": "PRE Garant",
+                        "created": "2014-08-25",
+                        "modified": "2014-08-25",
+                        "state": "active"
+                    },
+                    {
+                        "id": 3,
+                        "fcn": "58344916",
+                        "pcn": "18104852",
+                        "msisdn": "797005015",
+                        "iccid": "6867696061686769606",
+                        "product": "PRE Garant",
+                        "created": "2014-08-25",
+                        "modified": "2014-08-25",
+                        "state": "active"
+                    }
+                ]
+            }
+        }
+
+## /v1/service/item/detail
+
+### POST
+Detail existující služby.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 43
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "service": {
+                    "id": 43,
+                    "state": "active",
+                    "product": "T2",
+                    "msisdn": {
+                        "msisdn": "729359153"
+                    },
+                    "iccid": "7456519983708858368",
+                    "pcn": "67621929",
+                    "ported": 0,
+                    "cvop": null,
+                    "master": 0,
+                    "jts": 0,
+                    "mkt1": 0,
+                    "mkt2": 1,
+                    "mkt3": 1,
+                    "created": "2014-08-25",
+                    "modified": "2014-08-25",
+                    "termination": null,
+                    "provisioningDate": null,
+                    "fcn": "38343057",
+                    "customerId": 25
+                }
+            }
+        }
+
+## /v1/service/action/create-change-sim-order
+
+### POST
+Vytvoření objednávky pro změnu stávající SIM.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 41,
+            "iccid": "6867696061686769606"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "orderId": 55
+            }
+        }
+
+# Group User
+
+## /v1/user/list
+
+### POST
+Seznam uživatelů.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "userList": [
+                    {
+                        "id": 7,
+                        "username": "Automaton No.2",
+                        "firstName": "Signu",
+                        "lastName": "Ragpowyd",
+                        "domain": "mvno",
+                        "roles": "order_data_input",
+                        "deleted": 0
+                    },
+                    {
+                        "id": 6,
+                        "username": "peer_user_admin",
+                        "firstName": "Tomáš",
+                        "lastName": "Ivanič",
+                        "domain": "mvno",
+                        "roles": "peer_user_admin",
+                        "deleted": 0
+                    },
+                    {
+                        "id": 5,
+                        "username": "order_provisioning",
+                        "firstName": "Gabriela",
+                        "lastName": "Holubová-Ivaničová",
+                        "domain": "mvno",
+                        "roles": "order_provisioning",
+                        "deleted": 0
+                    }
+                ]
+            }
+        }
+
+## /v1/user/item/create
+
+### POST
+Založení uživatele.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "user": {
+                "username": "Automaton No.1",
+                "password": "passwd",
+                "firstName": "Yyki",
+                "lastName": "Pacvhuvf",
+                "domain": "mvno",
+                "roles": [
+                    "peer_user_admin",
+                    "order_data_input"
+                ],
+                "deleted": false
+            }
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "userId": 7
+            }
+        }
+
+## /v1/user/item/detail
+
+### POST
+Detail uživatele.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 7
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "user": {
+                    "id": 7,
+                    "username": "Automaton No.1",
+                    "roles": [
+                        "order_data_input",
+                        "peer_user_admin"
+                    ],
+                    "domain": "mvno",
+                    "firstName": "Yyki",
+                    "lastName": "Pacvhuvf",
+                    "deleted": 0
+                }
+            }
+        }
+
+## /v1/user/item/edit
+
+### POST
+Editace uživatele.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "user": {
+                "id": 7,
+                "username": "Automaton No.2",
+                "password": "passwd",
+                "firstName": "Signu",
+                "lastName": "Ragpowyd",
+                "domain": "mvno",
+                "roles": [
+                    "order_data_input"
+                ],
+                "deleted": false
+            }
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+        
+            }
+        }
+
+# Group Auth
+
+## /v1/auth/user/login
+
+### POST
+Přihlášení uživatele.
+
++ Request (application/json)
+
+        {
+            "username": "order_print",
+            "password": "aaaa"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "token": "a8619821206d522286cbaf250f35305712a70134",
+                "user": {
+                    "id": 4,
+                    "username": "order_print",
+                    "firstName": "Eva",
+                    "lastName": "Fabiánová",
+                    "domain": "mvno",
+                    "roles": [
+                        "order_print"
+                    ]
+                }
+            }
+        }
+
+## /v1/auth/user/login?errors
+
+### POST
+Přihlášení uživatele - neúspěch.
+
++ Request (application/json)
+
+        {
+            "username": "order_print",
+            "password": "bbbb"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "errors": {
+                "message": "Ověření uživatelé se nezdařilo."
+            }
+        }
+
+## /v1/auth/user/logout
+
+### POST
+Odhlášení uživatele.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+        
+            }
+        }
+
+# Group Codebook
+
+## /v1/tariff/list
+
+### POST
+Seznam tarifů.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "tariffList": [
+                    {
+                        "id": "T1",
+                        "name": "PRE Garant",
+                        "data": "PRE Data den"
+                    },
+                    {
+                        "id": "T2",
+                        "name": "PRE Komfort",
+                        "data": "PRE Data den"
+                    },
+                    {
+                        "id": "T3",
+                        "name": "PRE Aktiv",
+                        "data": "PRE Aktiv"
+                    }
+                ]
+            }
+        }
+
+## /v1/codebook/document-type
+
+### POST
+Seznam typů dokumentů.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "all": [
+                    {
+                        "documentType": 1,
+                        "documentName": "Řidičský průkaz"
+                    },
+                    {
+                        "documentType": 2,
+                        "documentName": "Zelená karta"
+                    },
+                    {
+                        "documentType": 3,
+                        "documentName": "Pas \/ ID (Obyvatelé EU)"
+                    },
+                    {
+                        "documentType": 4,
+                        "documentName": "Občanský průkaz"
+                    },
+                    {
+                        "documentType": 6,
+                        "documentName": "ZTP\/P"
+                    },
+                    {
+                        "documentType": 7,
+                        "documentName": "Diplomatický průkaz"
+                    },
+                    {
+                        "documentType": 8,
+                        "documentName": "Platební karta"
+                    },
+                    {
+                        "documentType": 9,
+                        "documentName": "Zbrojní pas"
+                    },
+                    {
+                        "documentType": 10,
+                        "documentName": "Vojenská knížka"
+                    },
+                    {
+                        "documentType": 11,
+                        "documentName": "Služební průkaz"
+                    },
+                    {
+                        "documentType": 12,
+                        "documentName": "Dlouhodobé vízum"
+                    },
+                    {
+                        "documentType": 13,
+                        "documentName": "Rodný list"
+                    },
+                    {
+                        "documentType": 14,
+                        "documentName": "Pas ČR (fialový)"
+                    },
+                    {
+                        "documentType": 15,
+                        "documentName": "Pas ČR (zelený)"
+                    },
+                    {
+                        "documentType": 16,
+                        "documentName": "Pas – cizinec\/ID občan EU"
+                    },
+                    {
+                        "documentType": 18,
+                        "documentName": "Povolení k trvalému pobytu"
+                    },
+                    {
+                        "documentType": 19,
+                        "documentName": "Potvrzení o přechodném pobytu"
+                    },
+                    {
+                        "documentType": 20,
+                        "documentName": "Průkaz pojištěnce"
+                    },
+                    {
+                        "documentType": 21,
+                        "documentName": "Náhradní doklad"
+                    }
+                ],
+                "first": [
+                    {
+                        "nationality": "AD",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "AE",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "AF",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "AG",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "AI",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "AL",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "AM",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "AN",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "AO",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "AQ",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "AR",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "AS",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "AT",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "AU",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "AW",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "AZ",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BA",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BB",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BD",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BE",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BF",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BG",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BH",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BI",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BJ",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BL",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BM",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BN",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BO",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BR",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BS",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BT",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BV",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BW",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BY",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "BZ",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "CA",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "CC",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "CD",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "CF",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "CG",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "CH",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "CI",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "CK",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "CL",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "CM",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "CN",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "CO",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "CR",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "CU",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "CV",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "CX",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "CY",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "CZ",
+                        "documentTypeList": [
+                            3,
+                            4,
+                            14,
+                            15,
+                            16,
+                            21
+                        ]
+                    },
+                    {
+                        "nationality": "DE",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "DJ",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "DK",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "DM",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "DO",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "DZ",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "EC",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "EE",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "EG",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "EH",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "EM",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "ER",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "ES",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "ET",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "FI",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "FJ",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "FK",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "FM",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "FO",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "FR",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "FX",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GA",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GB",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GD",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GE",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GF",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GG",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GH",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GI",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GL",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GM",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GN",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GP",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GQ",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GR",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GS",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GT",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GU",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GW",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "GY",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "HK",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "HM",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "HN",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "HR",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "HT",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "HU",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "ID",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "IE",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "IL",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "IM",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "IN",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "IO",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "IQ",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "IR",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "IS",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "IT",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "JE",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "JM",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "JO",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "JP",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "KE",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "KG",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "KH",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "KI",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "KM",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "KN",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "KO",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "KP",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "KR",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "KW",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "KY",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "KZ",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "LA",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "LB",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "LC",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "LI",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "LK",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "LR",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "LS",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "LT",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "LU",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "LV",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "LY",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MA",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MC",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MD",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "ME",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MF",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MG",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MH",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MI",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MK",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "ML",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MM",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MN",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MO",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MP",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MQ",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MR",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MS",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MT",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MU",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MV",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MW",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MX",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MY",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "MZ",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "NA",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "NC",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "NE",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "NF",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "NG",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "NI",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "NL",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "NO",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "NP",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "NR",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "NU",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "NZ",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "OM",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "PA",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "PE",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "PF",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "PG",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "PH",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "PI",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "PK",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "PL",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "PM",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "PN",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "PR",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "PS",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "PT",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "PW",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "PY",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "QA",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "RE",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "RO",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "RS",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "RU",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "RW",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SA",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SB",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SC",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SD",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SE",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SG",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SH",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SI",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SJ",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SK",
+                        "documentTypeList": [
+                            3,
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SL",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SM",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SN",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SO",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SR",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SS",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "ST",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SV",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SY",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "SZ",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "TC",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "TD",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "TF",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "TG",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "TH",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "TJ",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "TK",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "TM",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "TN",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "TO",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "TP",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "TR",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "TT",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "TV",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "TW",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "TZ",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "UA",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "UG",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "UM",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "US",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "UY",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "UZ",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "VA",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "VC",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "VE",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "VG",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "VI",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "VN",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "VU",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "WF",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "WS",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "YE",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "YT",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "YU",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "ZA",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "ZM",
+                        "documentTypeList": [
+                            16
+                        ]
+                    },
+                    {
+                        "nationality": "ZW",
+                        "documentTypeList": [
+                            16
+                        ]
+                    }
+                ],
+                "second": [
+                    {
+                        "customerType": "FO",
+                        "firstDocumentType": 3,
+                        "documentTypeList": [
+        
+                        ]
+                    },
+                    {
+                        "customerType": "FO",
+                        "firstDocumentType": 4,
+                        "documentTypeList": [
+        
+                        ]
+                    },
+                    {
+                        "customerType": "FO",
+                        "firstDocumentType": 14,
+                        "documentTypeList": [
+        
+                        ]
+                    },
+                    {
+                        "customerType": "FO",
+                        "firstDocumentType": 15,
+                        "documentTypeList": [
+        
+                        ]
+                    },
+                    {
+                        "customerType": "FO",
+                        "firstDocumentType": 16,
+                        "documentTypeList": [
+        
+                        ]
+                    },
+                    {
+                        "customerType": "FO",
+                        "firstDocumentType": 21,
+                        "documentTypeList": [
+                            1,
+                            6,
+                            7,
+                            9,
+                            10,
+                            11
+                        ]
+                    },
+                    {
+                        "customerType": "FOc",
+                        "firstDocumentType": 3,
+                        "documentTypeList": [
+                            2,
+                            7,
+                            12,
+                            18
+                        ]
+                    },
+                    {
+                        "customerType": "FOc",
+                        "firstDocumentType": 16,
+                        "documentTypeList": [
+                            2,
+                            7,
+                            12,
+                            18
+                        ]
+                    },
+                    {
+                        "customerType": "FOP",
+                        "firstDocumentType": 3,
+                        "documentTypeList": [
+        
+                        ]
+                    },
+                    {
+                        "customerType": "FOP",
+                        "firstDocumentType": 4,
+                        "documentTypeList": [
+        
+                        ]
+                    },
+                    {
+                        "customerType": "FOP",
+                        "firstDocumentType": 14,
+                        "documentTypeList": [
+        
+                        ]
+                    },
+                    {
+                        "customerType": "FOP",
+                        "firstDocumentType": 15,
+                        "documentTypeList": [
+        
+                        ]
+                    },
+                    {
+                        "customerType": "FOP",
+                        "firstDocumentType": 16,
+                        "documentTypeList": [
+        
+                        ]
+                    },
+                    {
+                        "customerType": "FOP",
+                        "firstDocumentType": 21,
+                        "documentTypeList": [
+                            1,
+                            6,
+                            7,
+                            9,
+                            10,
+                            11
+                        ]
+                    },
+                    {
+                        "customerType": "FOPc",
+                        "firstDocumentType": 3,
+                        "documentTypeList": [
+        
+                        ]
+                    },
+                    {
+                        "customerType": "FOPc",
+                        "firstDocumentType": 16,
+                        "documentTypeList": [
+        
+                        ]
+                    },
+                    {
+                        "customerType": "PO",
+                        "firstDocumentType": 3,
+                        "documentTypeList": [
+        
+                        ]
+                    },
+                    {
+                        "customerType": "PO",
+                        "firstDocumentType": 4,
+                        "documentTypeList": [
+        
+                        ]
+                    },
+                    {
+                        "customerType": "PO",
+                        "firstDocumentType": 14,
+                        "documentTypeList": [
+        
+                        ]
+                    },
+                    {
+                        "customerType": "PO",
+                        "firstDocumentType": 15,
+                        "documentTypeList": [
+        
+                        ]
+                    },
+                    {
+                        "customerType": "PO",
+                        "firstDocumentType": 16,
+                        "documentTypeList": [
+        
+                        ]
+                    },
+                    {
+                        "customerType": "PO",
+                        "firstDocumentType": 21,
+                        "documentTypeList": [
+                            1,
+                            6,
+                            7,
+                            9,
+                            10,
+                            11
+                        ]
+                    },
+                    {
+                        "customerType": "POc",
+                        "firstDocumentType": 3,
+                        "documentTypeList": [
+        
+                        ]
+                    },
+                    {
+                        "customerType": "POc",
+                        "firstDocumentType": 16,
+                        "documentTypeList": [
+        
+                        ]
+                    }
+                ]
+            }
+        }
+
