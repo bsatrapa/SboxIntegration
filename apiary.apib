@@ -1,8 +1,10 @@
 FORMAT: 1A
-HOST: http://demorwe.a-box.cz
+HOST: http://www.a-box.cz
 
-# SboxIntegration
-SIM sales support service
+# Sbox (generovaná dokumentace)
+SIM sales support service  
+Wed Sep  3 16:34:27 CEST 2014
+  
 
 # Group Order
 
@@ -14,7 +16,40 @@ Seznam objednávek
 + Request (application/json)
 
         {
-            "token": "abcd1234"
+            "token": "abcd1234",
+            "listingRequest": {
+                "orderBy": [
+                    {
+                        "column": "id",
+                        "direction": "desc"
+                    },
+                    {
+                        "column": "fcn",
+                        "direction": "asc"
+                    }
+                ],
+                "subset": {
+                    "offset": 0,
+                    "count": 6
+                },
+                "filter": [
+                    {
+                        "column": "state",
+                        "condition": "equal",
+                        "value": "credit check ok"
+                    },
+                    {
+                        "column": "created",
+                        "condition": "contains",
+                        "value": "2014"
+                    },
+                    {
+                        "column": "modified",
+                        "condition": "greaterOrEqual",
+                        "value": "2014-08-23"
+                    }
+                ]
+            }
         }
 
 + Response 200 (application/json)
@@ -23,63 +58,123 @@ Seznam objednávek
             "result": {
                 "orderList": [
                     {
-                        "id": 35,
-                        "pcn": "18104852",
-                        "fcn": "54452836",
-                        "type": "Dodatková",
-                        "state": "input",
+                        "id": 23,
+                        "pcn": "55157386",
+                        "fcn": "40144078",
+                        "type": "Nová",
+                        "state": "credit check ok",
+                        "loyality": "332211",
+                        "companyName": "Tukcat, s.r.o.",
+                        "name": "Relm Gexuico",
+                        "companyRegistrationNumber": "26204665",
+                        "idNumber": "8430212121",
+                        "delivery": 0,
+                        "msisdn": "779624666",
+                        "ported": 0,
+                        "created": "2014-09-03",
+                        "modified": "2014-09-03",
+                        "createdUser": null,
+                        "modifiedUser": null
+                    },
+                    {
+                        "id": 23,
+                        "pcn": "37304239",
+                        "fcn": "40144078",
+                        "type": "Nová",
+                        "state": "credit check ok",
+                        "loyality": "332211",
+                        "companyName": "Tukcat, s.r.o.",
+                        "name": "Relm Gexuico",
+                        "companyRegistrationNumber": "26204665",
+                        "idNumber": "8430212121",
+                        "delivery": 0,
+                        "msisdn": "656701859",
+                        "ported": 1,
+                        "created": "2014-09-03",
+                        "modified": "2014-09-03",
+                        "createdUser": null,
+                        "modifiedUser": null
+                    },
+                    {
+                        "id": 22,
+                        "pcn": "48597344",
+                        "fcn": "12118425",
+                        "type": "Nová",
+                        "state": "credit check ok",
+                        "loyality": "332211",
+                        "companyName": "Setfefl, s.r.o.",
+                        "name": "Naki Cujbuk",
+                        "companyRegistrationNumber": "26204657",
+                        "idNumber": "6701230349",
+                        "delivery": 0,
+                        "msisdn": "680640674",
+                        "ported": 0,
+                        "created": "2014-09-03",
+                        "modified": "2014-09-03",
+                        "createdUser": null,
+                        "modifiedUser": null
+                    },
+                    {
+                        "id": 22,
+                        "pcn": "10029232",
+                        "fcn": "12118425",
+                        "type": "Nová",
+                        "state": "credit check ok",
+                        "loyality": "332211",
+                        "companyName": "Setfefl, s.r.o.",
+                        "name": "Naki Cujbuk",
+                        "companyRegistrationNumber": "26204657",
+                        "idNumber": "6701230349",
+                        "delivery": 0,
+                        "msisdn": "785565155",
+                        "ported": 1,
+                        "created": "2014-09-03",
+                        "modified": "2014-09-03",
+                        "createdUser": null,
+                        "modifiedUser": null
+                    },
+                    {
+                        "id": 21,
+                        "pcn": "45513031",
+                        "fcn": "27555777",
+                        "type": "Nová",
+                        "state": "credit check ok",
                         "loyality": "332211",
                         "companyName": null,
-                        "name": "Kang Sucsaza",
+                        "name": "Viy Tipsytt",
                         "companyRegistrationNumber": null,
-                        "idNumber": "6762233753",
+                        "idNumber": "6701230338",
                         "delivery": 0,
-                        "msisdn": null,
+                        "msisdn": "724469383",
                         "ported": 0,
-                        "created": "2014-08-25",
-                        "modified": "2014-08-25",
-                        "createdUser": "james",
-                        "modifiedUser": "james"
+                        "created": "2014-09-03",
+                        "modified": "2014-09-03",
+                        "createdUser": null,
+                        "modifiedUser": null
                     },
                     {
-                        "id": 1,
-                        "pcn": "18104852",
-                        "fcn": "58344916",
+                        "id": 21,
+                        "pcn": "63427811",
+                        "fcn": "27555777",
                         "type": "Nová",
-                        "state": "input",
-                        "loyality": null,
+                        "state": "credit check ok",
+                        "loyality": "332211",
                         "companyName": null,
-                        "name": " ",
+                        "name": "Viy Tipsytt",
                         "companyRegistrationNumber": null,
-                        "idNumber": null,
+                        "idNumber": "6701230338",
                         "delivery": 0,
-                        "msisdn": null,
-                        "ported": 0,
-                        "created": "2014-08-25",
-                        "modified": "2014-08-25",
-                        "createdUser": "james",
-                        "modifiedUser": "james"
-                    },
-                    {
-                        "id": 2,
-                        "pcn": "18104852",
-                        "fcn": "58344916",
-                        "type": "Nová",
-                        "state": "input",
-                        "loyality": null,
-                        "companyName": null,
-                        "name": " ",
-                        "companyRegistrationNumber": null,
-                        "idNumber": null,
-                        "delivery": 0,
-                        "msisdn": null,
-                        "ported": 0,
-                        "created": "2014-08-25",
-                        "modified": "2014-08-25",
-                        "createdUser": "james",
-                        "modifiedUser": "james"
+                        "msisdn": "719753198",
+                        "ported": 1,
+                        "created": "2014-09-03",
+                        "modified": "2014-09-03",
+                        "createdUser": null,
+                        "modifiedUser": null
                     }
-                ]
+                ],
+                "listingResponse": {
+                    "count": 8
+                }
             }
         }
 
@@ -98,7 +193,7 @@ Založení prázdné objednávky.
 
         {
             "result": {
-                "orderId": 50
+                "orderId": 18
             }
         }
 
@@ -111,7 +206,7 @@ Získání existující objednávky.
 
         {
             "token": "abcd1234",
-            "id": 51
+            "id": 19
         }
 
 + Response 200 (application/json)
@@ -119,7 +214,7 @@ Získání existující objednávky.
         {
             "result": {
                 "order": {
-                    "id": 51,
+                    "id": 19,
                     "type": "NEW",
                     "state": "input",
                     "stateMessage": "",
@@ -169,7 +264,7 @@ Získání existující objednávky.
                                 },
                                 "subscriberList": [
                                     {
-                                        "id": 71,
+                                        "id": 28,
                                         "state": null,
                                         "product": null,
                                         "msisdn": {
@@ -185,7 +280,7 @@ Získání existující objednávky.
                                         "mkt2": 1,
                                         "mkt3": 1,
                                         "created": null,
-                                        "modified": "2014-08-25",
+                                        "modified": "2014-09-03",
                                         "termination": null,
                                         "provisioningDate": null
                                     }
@@ -211,7 +306,7 @@ Získání existující objednávky.
                             },
                             "documentList": [
                                 {
-                                    "id": 103,
+                                    "id": 44,
                                     "documentType": null,
                                     "documentNumber": null,
                                     "documentValidTo": null
@@ -230,7 +325,7 @@ Získání existující objednávky.
                         "deleted": 0
                     },
                     "created": [
-                        "2014-08-25 00:00:00",
+                        "2014-09-03 00:00:00",
                         3,
                         "Europe\/Prague"
                     ],
@@ -280,19 +375,22 @@ Získání existující objednávky.
                 },
                 "activityList": [
                     {
-                        "id": 473,
+                        "id": 122,
                         "type": "pcn-retrieve",
                         "params": {
-                            "subscriberId": 71
+                            "subscriberId": 28
                         }
                     },
                     {
-                        "id": 474,
+                        "id": 123,
                         "type": "fcn-retrieve",
                         "params": {
-                            "orderId": 51
+                            "orderId": 19
                         }
                     }
+                ],
+                "actionList": [
+        
                 ]
             }
         }
@@ -307,7 +405,7 @@ Editace existující objednávky.
         {
             "token": "abcd1234",
             "order": {
-                "id": 52,
+                "id": 20,
                 "poPo": null,
                 "customer": {
                     "type": "FO",
@@ -342,7 +440,7 @@ Editace existující objednávky.
                             "bankCode": null,
                             "subscriberList": [
                                 {
-                                    "id": 72,
+                                    "id": 29,
                                     "product": null,
                                     "ported": 0,
                                     "cvop": null,
@@ -385,7 +483,7 @@ Editace existující objednávky - chyba na vstupu.
         {
             "token": "abcd1234",
             "order": {
-                "id": 52,
+                "id": 20,
                 "poPo": null,
                 "customer": {
                     "type": "FO",
@@ -420,7 +518,7 @@ Editace existující objednávky - chyba na vstupu.
                             "bankCode": null,
                             "subscriberList": [
                                 {
-                                    "id": 72,
+                                    "id": 29,
                                     "product": null,
                                     "ported": 0,
                                     "cvop": null,
@@ -456,7 +554,7 @@ Editace existující objednávky - chyba na vstupu.
             "errors": {
                 "message": "Neznámá chyba.",
                 "code": "UNKNOWN",
-                "details": "Neznámá chyba. (1408984209.7591)"
+                "details": "Neznámá chyba. (1409754701.3482)"
             }
         }
 
@@ -544,7 +642,7 @@ Nový zákazník.
 
         {
             "token": "abcd1234",
-            "id": 45,
+            "id": 13,
             "type": "PO",
             "companyRegistrationNumber": null,
             "companyTaxNumber": null,
@@ -576,9 +674,9 @@ Zákazník už má objednávku.
 
         {
             "token": "abcd1234",
-            "id": 46,
+            "id": 14,
             "type": "PO",
-            "companyRegistrationNumber": "64572366",
+            "companyRegistrationNumber": "26204614",
             "companyTaxNumber": null,
             "birthNumber": null,
             "documentList": [
@@ -599,7 +697,7 @@ Zákazník už má objednávku.
                 "data": {
                     "field": "companyRegistrationNumber",
                     "id": null,
-                    "orderId": 45
+                    "orderId": 13
                 }
             }
         }
@@ -613,9 +711,9 @@ Zákazník už existuje.
 
         {
             "token": "abcd1234",
-            "id": 47,
+            "id": 15,
             "type": "PO",
-            "companyRegistrationNumber": "64572374",
+            "companyRegistrationNumber": "26204622",
             "companyTaxNumber": null,
             "birthNumber": null,
             "documentList": [
@@ -636,7 +734,7 @@ Zákazník už existuje.
                 "data": {
                     "field": "companyRegistrationNumber",
                     "id": null,
-                    "serviceId": 22
+                    "serviceId": 5
                 }
             }
         }
@@ -658,7 +756,7 @@ Přiřadí do objednávky zaslanou fakturační adresu a doplní region a uirId.
 
         {
             "token": "abcd1234",
-            "orderId": 33,
+            "orderId": 1,
             "type": "billing",
             "address": {
                 "city": "Litomyšl",
@@ -701,7 +799,7 @@ Validace bez korekce adresy - pravděpodobně nenastává.
 
         {
             "token": "abcd1234",
-            "orderId": 33,
+            "orderId": 1,
             "type": "contact",
             "address": {
                 "city": "Litomyšl",
@@ -747,7 +845,7 @@ Validace adresy s chybou.
 
         {
             "token": "abcd1234",
-            "orderId": 33,
+            "orderId": 1,
             "type": "contact",
             "address": {
                 "city": "Litomyšl",
@@ -787,7 +885,7 @@ Vyresetování přiřazené adresy.
         {
             "token": "abcd1234",
             "type": "billing",
-            "orderId": 33
+            "orderId": 1
         }
 
 + Response 200 (application/json)
@@ -808,7 +906,7 @@ Vyresetování přiřazené adresy - neúspěch.
         {
             "token": "abcd1234",
             "type": "non-type",
-            "orderId": 33
+            "orderId": 1
         }
 
 + Response 200 (application/json)
@@ -838,7 +936,7 @@ Nabídka telefonních čísel - nastartování akce
             "callStatus": {
                 "finished": false,
                 "status": "created",
-                "activityId": 428
+                "activityId": 77
             },
             "result": {
         
@@ -854,7 +952,7 @@ Nabídka telefonních čísel - probíhající polling
 
         {
             "token": "abcd1234",
-            "activityId": 428
+            "activityId": 77
         }
 
 + Response 200 (application/json)
@@ -863,7 +961,7 @@ Nabídka telefonních čísel - probíhající polling
             "callStatus": {
                 "finished": false,
                 "status": "polling",
-                "activityId": 428
+                "activityId": 77
             },
             "result": {
         
@@ -879,7 +977,7 @@ Nabídka telefonních čísel - úspěšný polling
 
         {
             "token": "abcd1234",
-            "activityId": 428
+            "activityId": 77
         }
 
 + Response 200 (application/json)
@@ -888,7 +986,7 @@ Nabídka telefonních čísel - úspěšný polling
             "callStatus": {
                 "finished": true,
                 "status": "done",
-                "activityId": 428
+                "activityId": 77
             },
             "result": {
                 "msisdns": [
@@ -911,7 +1009,7 @@ Nabídka telefonních čísel - neúspěšný polling
 
         {
             "token": "abcd1234",
-            "activityId": 428
+            "activityId": 77
         }
 
 + Response 200 (application/json)
@@ -920,7 +1018,7 @@ Nabídka telefonních čísel - neúspěšný polling
             "callStatus": {
                 "finished": true,
                 "status": "failed",
-                "activityId": 428
+                "activityId": 77
             },
             "result": {
                 "message": "Order subscriber id '549' already has locking in progress '1816'.",
@@ -937,7 +1035,7 @@ Uzamknutí vybraného msisdn - nastartování akce.
 
         {
             "token": "abcd1234",
-            "subscriberId": 55,
+            "subscriberId": 12,
             "msisdn": "797005015"
         }
 
@@ -947,7 +1045,7 @@ Uzamknutí vybraného msisdn - nastartování akce.
             "callStatus": {
                 "finished": false,
                 "status": "created",
-                "activityId": 427
+                "activityId": 76
             },
             "result": {
         
@@ -963,7 +1061,7 @@ Uzamknutí vybraného msisdn - probíhající polling.
 
         {
             "token": "abcd1234",
-            "activityId": 427
+            "activityId": 76
         }
 
 + Response 200 (application/json)
@@ -972,7 +1070,7 @@ Uzamknutí vybraného msisdn - probíhající polling.
             "callStatus": {
                 "finished": false,
                 "status": "polling",
-                "activityId": 427
+                "activityId": 76
             },
             "result": {
         
@@ -988,7 +1086,7 @@ Uzamknutí vybraného msisdn - úspěšný polling.
 
         {
             "token": "abcd1234",
-            "activityId": 427
+            "activityId": 76
         }
 
 + Response 200 (application/json)
@@ -997,7 +1095,7 @@ Uzamknutí vybraného msisdn - úspěšný polling.
             "callStatus": {
                 "finished": true,
                 "status": "done",
-                "activityId": 427
+                "activityId": 76
             },
             "result": {
         
@@ -1013,7 +1111,7 @@ Uzamknutí vybraného msisdn - neúspěšný polling.
 
         {
             "token": "abcd1234",
-            "activityId": 427
+            "activityId": 76
         }
 
 + Response 200 (application/json)
@@ -1022,7 +1120,7 @@ Uzamknutí vybraného msisdn - neúspěšný polling.
             "callStatus": {
                 "finished": true,
                 "status": "failed",
-                "activityId": 427
+                "activityId": 76
             },
             "errors": {
                 "message": "Popis chyby."
@@ -1038,7 +1136,7 @@ Vložení portovaného čísla - nastartování akce.
 
         {
             "token": "abcd1234",
-            "subscriberId": 56,
+            "subscriberId": 13,
             "msisdn": "666777888"
         }
 
@@ -1048,7 +1146,7 @@ Vložení portovaného čísla - nastartování akce.
             "callStatus": {
                 "finished": false,
                 "status": "created",
-                "activityId": 432
+                "activityId": 81
             },
             "result": {
         
@@ -1064,7 +1162,7 @@ Vložení portovaného čísla - probíhající polling.
 
         {
             "token": "abcd1234",
-            "activityId": 432
+            "activityId": 81
         }
 
 + Response 200 (application/json)
@@ -1073,7 +1171,7 @@ Vložení portovaného čísla - probíhající polling.
             "callStatus": {
                 "finished": false,
                 "status": "polling",
-                "activityId": 432
+                "activityId": 81
             },
             "result": {
         
@@ -1089,7 +1187,7 @@ Vložení portovaného čísla - úspěšný polling.
 
         {
             "token": "abcd1234",
-            "activityId": 432
+            "activityId": 81
         }
 
 + Response 200 (application/json)
@@ -1098,7 +1196,7 @@ Vložení portovaného čísla - úspěšný polling.
             "callStatus": {
                 "finished": true,
                 "status": "done",
-                "activityId": 432
+                "activityId": 81
             },
             "result": {
         
@@ -1114,7 +1212,7 @@ Vložení portovaného čísla - neúspěšný polling.
 
         {
             "token": "abcd1234",
-            "activityId": 432
+            "activityId": 81
         }
 
 + Response 200 (application/json)
@@ -1123,7 +1221,7 @@ Vložení portovaného čísla - neúspěšný polling.
             "callStatus": {
                 "finished": true,
                 "status": "failed",
-                "activityId": 432
+                "activityId": 81
             },
             "errors": {
                 "message": "Popis chyby."
@@ -1149,13 +1247,6 @@ Seznam datumů pro portaci.
         {
             "result": {
                 "allowedDateList": [
-                    "2014-08-29",
-                    "2014-09-01",
-                    "2014-09-02",
-                    "2014-09-03",
-                    "2014-09-04",
-                    "2014-09-05",
-                    "2014-09-08",
                     "2014-09-09",
                     "2014-09-10",
                     "2014-09-11",
@@ -1188,7 +1279,12 @@ Seznam datumů pro portaci.
                     "2014-10-20",
                     "2014-10-21",
                     "2014-10-22",
-                    "2014-10-23"
+                    "2014-10-23",
+                    "2014-10-24",
+                    "2014-10-27",
+                    "2014-10-29",
+                    "2014-10-30",
+                    "2014-10-31"
                 ]
             }
         }
@@ -1202,7 +1298,7 @@ Změna datumu pro portaci - nastartování akce.
 
         {
             "token": "abcd1234",
-            "subscriberId": 73,
+            "subscriberId": 36,
             "wishDate": "2014-10-10"
         }
 
@@ -1212,7 +1308,7 @@ Změna datumu pro portaci - nastartování akce.
             "callStatus": {
                 "finished": false,
                 "status": "waiting",
-                "activityId": 479
+                "activityId": 128
             },
             "result": {
         
@@ -1228,7 +1324,7 @@ Změna datumu pro portaci - probíhající polling.
 
         {
             "token": "abcd1234",
-            "activityId": 479
+            "activityId": 128
         }
 
 + Response 200 (application/json)
@@ -1237,7 +1333,7 @@ Změna datumu pro portaci - probíhající polling.
             "callStatus": {
                 "finished": false,
                 "status": "polling",
-                "activityId": 479
+                "activityId": 128
             },
             "result": {
         
@@ -1253,7 +1349,7 @@ Změna datumu pro portaci - úspěšný polling.
 
         {
             "token": "abcd1234",
-            "activityId": 479
+            "activityId": 128
         }
 
 + Response 200 (application/json)
@@ -1262,7 +1358,7 @@ Změna datumu pro portaci - úspěšný polling.
             "callStatus": {
                 "finished": true,
                 "status": "done",
-                "activityId": 479
+                "activityId": 128
             },
             "result": {
         
@@ -1278,7 +1374,7 @@ Změna datumu pro portaci - neúspěšný polling.
 
         {
             "token": "abcd1234",
-            "activityId": 482
+            "activityId": 131
         }
 
 + Response 200 (application/json)
@@ -1287,10 +1383,10 @@ Změna datumu pro portaci - neúspěšný polling.
             "callStatus": {
                 "finished": true,
                 "status": "failed",
-                "activityId": 482
+                "activityId": 131
             },
             "errors": {
-                "message": "Expecting one running activity 'port-in-date-change' for subscriber id '73' got 0.",
+                "message": "Expecting one running activity 'port-in-date-change' for subscriber id '36' got 0.",
                 "code": "ERROR_ACTIVITY_INCONSISTENT"
             }
         }
@@ -1306,7 +1402,7 @@ Uzamknutí vybrané simky - nastartování akce.
 
         {
             "token": "abcd1234",
-            "subscriberId": 54,
+            "subscriberId": 11,
             "iccid": "6867696061686769606"
         }
 
@@ -1316,7 +1412,7 @@ Uzamknutí vybrané simky - nastartování akce.
             "callStatus": {
                 "finished": false,
                 "status": "created",
-                "activityId": 424
+                "activityId": 73
             },
             "result": {
         
@@ -1332,7 +1428,7 @@ Uzamknutí vybrané simky - probíhající polling.
 
         {
             "token": "abcd1234",
-            "activityId": 424
+            "activityId": 73
         }
 
 + Response 200 (application/json)
@@ -1341,7 +1437,7 @@ Uzamknutí vybrané simky - probíhající polling.
             "callStatus": {
                 "finished": false,
                 "status": "polling",
-                "activityId": 424
+                "activityId": 73
             },
             "result": {
         
@@ -1357,7 +1453,7 @@ Uzamknutí vybrané simky - úspěšný polling.
 
         {
             "token": "abcd1234",
-            "activityId": 424
+            "activityId": 73
         }
 
 + Response 200 (application/json)
@@ -1366,7 +1462,7 @@ Uzamknutí vybrané simky - úspěšný polling.
             "callStatus": {
                 "finished": true,
                 "status": "done",
-                "activityId": 424
+                "activityId": 73
             },
             "result": {
         
@@ -1382,7 +1478,7 @@ Uzamknutí vybrané simky - neúspěšný polling.
 
         {
             "token": "abcd1234",
-            "activityId": 424
+            "activityId": 73
         }
 
 + Response 200 (application/json)
@@ -1391,7 +1487,7 @@ Uzamknutí vybrané simky - neúspěšný polling.
             "callStatus": {
                 "finished": true,
                 "status": "failed",
-                "activityId": 424
+                "activityId": 73
             },
             "errors": {
                 "message": "Popis chyby."
@@ -1409,7 +1505,7 @@ Uzamknutí vybrané simky - neúspěšný polling.
 
         {
             "token": "abcd1234",
-            "id": 44
+            "id": 12
         }
 
 + Response 200 (application/json)
@@ -1429,7 +1525,7 @@ Credit check existující objednávky - se zálohou.
 
         {
             "token": "abcd1234",
-            "id": 44
+            "id": 12
         }
 
 + Response 200 (application/json)
@@ -1449,7 +1545,7 @@ Credit check existující objednávky - zamítnutá.
 
         {
             "token": "abcd1234",
-            "id": 44
+            "id": 12
         }
 
 + Response 200 (application/json)
@@ -1469,7 +1565,7 @@ Credit check existující objednávky - neúspěšný pokus.
 
         {
             "token": "abcd1234",
-            "id": 44
+            "id": 12
         }
 
 + Response 200 (application/json)
@@ -1489,7 +1585,7 @@ Návrat do stavu input.
 
         {
             "token": "abcd1234",
-            "id": 44
+            "id": 12
         }
 
 + Response 200 (application/json)
@@ -1509,7 +1605,7 @@ Neúspěšný návrat do stavu input.
 
         {
             "token": "abcd1234",
-            "id": 44
+            "id": 12
         }
 
 + Response 200 (application/json)
@@ -1529,7 +1625,7 @@ Posune objednávku do stavu Credit check override deposit nebo Credit check over
 
         {
             "token": "abcd1234",
-            "id": 43,
+            "id": 11,
             "type": "deposit"
         }
 
@@ -1550,7 +1646,7 @@ Neúspěšný credit check override.
 
         {
             "token": "abcd1234",
-            "id": 43,
+            "id": 11,
             "type": "vip"
         }
 
@@ -1573,7 +1669,7 @@ Převedení objednávky do stavu CONTRACT.
 
         {
             "token": "abcd1234",
-            "id": 48
+            "id": 16
         }
 
 + Response 200 (application/json)
@@ -1593,7 +1689,7 @@ Neúspěšný tisk smlouvy.
 
         {
             "token": "abcd1234",
-            "id": 48
+            "id": 16
         }
 
 + Response 200 (application/json)
@@ -1613,7 +1709,7 @@ Získání PDFka se smlouvou.
 
         {
             "token": "abcd1234",
-            "id": 48
+            "id": 16
         }
 
 + Response 200 (application/pdf)
@@ -1629,7 +1725,7 @@ Návrat do stavu před tisk.
 
         {
             "token": "abcd1234",
-            "id": 48
+            "id": 16
         }
 
 + Response 200 (application/json)
@@ -1649,7 +1745,7 @@ Neúspěšný návrat do stavu před tisk.
 
         {
             "token": "abcd1234",
-            "id": 48
+            "id": 16
         }
 
 + Response 200 (application/json)
@@ -1669,7 +1765,7 @@ Převedení objednávky do stavu CONTRACT SIGNED.
 
         {
             "token": "abcd1234",
-            "id": 49
+            "id": 17
         }
 
 + Response 200 (application/json)
@@ -1689,7 +1785,7 @@ Neúspěšné podepsání smlouvy.
 
         {
             "token": "abcd1234",
-            "id": 49
+            "id": 17
         }
 
 + Response 200 (application/json)
@@ -1711,7 +1807,7 @@ Převedení objednávky do stavu CANCEL.
 
         {
             "token": "abcd1234",
-            "id": 42
+            "id": 10
         }
 
 + Response 200 (application/json)
@@ -1731,7 +1827,7 @@ Neúspěšné převedení objednávky do stavu CANCEL.
 
         {
             "token": "abcd1234",
-            "id": 42
+            "id": 10
         }
 
 + Response 200 (application/json)
@@ -1752,7 +1848,35 @@ Seznam zákazníků
 + Request (application/json)
 
         {
-            "token": "abcd1234"
+            "token": "abcd1234",
+            "listingRequest": {
+                "orderBy": [
+                    {
+                        "column": "created",
+                        "direction": "desc"
+                    },
+                    {
+                        "column": "fcn",
+                        "direction": "asc"
+                    }
+                ],
+                "subset": {
+                    "offset": 0,
+                    "count": 3
+                },
+                "filter": [
+                    {
+                        "column": "state",
+                        "condition": "equal",
+                        "value": "active"
+                    },
+                    {
+                        "column": "created",
+                        "condition": "greaterOrEqual",
+                        "value": "2014-08-23"
+                    }
+                ]
+            }
         }
 
 + Response 200 (application/json)
@@ -1762,50 +1886,53 @@ Seznam zákazníků
                 "customerList": [
                     {
                         "id": 1,
-                        "fcn": "58344916",
-                        "loyality": "123",
+                        "fcn": "47251575",
+                        "loyality": "332211",
                         "type": "FO",
                         "companyName": null,
-                        "firstName": "bruce",
-                        "lastName": "lee test 0",
+                        "firstName": "Aasg",
+                        "lastName": "Fondcodji",
                         "companyRegistrationNumber": null,
                         "companyTaxNumber": null,
-                        "idNumber": "6661075542",
-                        "created": "2014-08-25",
+                        "idNumber": "6701230206",
+                        "created": "2014-09-03",
                         "state": "active",
-                        "discount": null
-                    },
-                    {
-                        "id": 2,
-                        "fcn": "58344916",
-                        "loyality": "123",
-                        "type": "FOP",
-                        "companyName": "Nová společnost 1",
-                        "firstName": "bruce",
-                        "lastName": "lee test 1",
-                        "companyRegistrationNumber": "00195766",
-                        "companyTaxNumber": null,
-                        "idNumber": "6762233621",
-                        "created": "2014-08-25",
-                        "state": "active",
-                        "discount": null
+                        "discount": 0
                     },
                     {
                         "id": 3,
-                        "fcn": "58344916",
-                        "loyality": "123",
-                        "type": "FOPc",
-                        "companyName": "Nová společnost 2",
-                        "firstName": "bruce",
-                        "lastName": "lee test 2",
-                        "companyRegistrationNumber": "63998033",
+                        "fcn": "57323946",
+                        "loyality": "332211",
+                        "type": "FO",
+                        "companyName": null,
+                        "firstName": "Bezw",
+                        "lastName": "Banraticp",
+                        "companyRegistrationNumber": null,
                         "companyTaxNumber": null,
-                        "idNumber": "1111112",
-                        "created": "2014-08-25",
+                        "idNumber": "6701230228",
+                        "created": "2014-09-03",
                         "state": "active",
-                        "discount": null
+                        "discount": 0
+                    },
+                    {
+                        "id": 4,
+                        "fcn": "80195550",
+                        "loyality": "332211",
+                        "type": "FO",
+                        "companyName": null,
+                        "firstName": "Jekw",
+                        "lastName": "Bubtvof",
+                        "companyRegistrationNumber": null,
+                        "companyTaxNumber": null,
+                        "idNumber": "6701230239",
+                        "created": "2014-09-03",
+                        "state": "active",
+                        "discount": 0
                     }
-                ]
+                ],
+                "listingResponse": {
+                    "count": 4
+                }
             }
         }
 
@@ -1818,7 +1945,7 @@ Detail existujícího zákazníka.
 
         {
             "token": "abcd1234",
-            "id": 21
+            "id": 4
         }
 
 + Response 200 (application/json)
@@ -1826,25 +1953,25 @@ Detail existujícího zákazníka.
         {
             "result": {
                 "customer": {
-                    "fcn": "58754404",
+                    "fcn": "80195550",
                     "type": "FO",
                     "solus": 1,
                     "positiveSolus": 1,
                     "isPoliticallyExposed": 0,
-                    "created": "2014-08-25",
+                    "created": "2014-09-03",
                     "contact": {
                         "companyRegistrationNumber": null,
                         "companyTaxNumber": null,
-                        "birthDate": "1967-12-23",
-                        "birthNumber": "6762233786",
+                        "birthDate": "1967-01-23",
+                        "birthNumber": "6701230239",
                         "companyName": null,
                         "email": null,
-                        "firstName": "Aah",
-                        "lastName": "Feqhideb",
+                        "firstName": "Jekw",
+                        "lastName": "Bubtvof",
                         "lastName5": "Testere",
                         "salutation": 2,
                         "nationality": "CZ",
-                        "note": "Automatický test: DocCustomerItemDetailTest, on: 25.08.2014 18:28:37",
+                        "note": "Automatický test: DocCustomerItemDetailTest, on: 03.09.2014 16:29:52",
                         "phone": "668567777",
                         "title": 1,
                         "titleAfter": 2,
@@ -1869,14 +1996,14 @@ Detail existujícího zákazníka.
                             },
                             "subscriberList": [
                                 {
-                                    "id": 35,
+                                    "id": 7,
                                     "state": "active",
-                                    "product": "T2",
+                                    "product": "V2",
                                     "msisdn": {
-                                        "msisdn": "642501383"
+                                        "msisdn": "654046462"
                                     },
-                                    "iccid": "6678127124905586688",
-                                    "pcn": "91798545",
+                                    "iccid": "8972051452845334528",
+                                    "pcn": "31771020",
                                     "ported": 0,
                                     "cvop": null,
                                     "master": 0,
@@ -1884,31 +2011,31 @@ Detail existujícího zákazníka.
                                     "mkt1": 0,
                                     "mkt2": 1,
                                     "mkt3": 1,
-                                    "created": "2014-08-25",
-                                    "modified": "2014-08-25",
+                                    "created": "2014-09-03",
+                                    "modified": "2014-09-03",
                                     "termination": null,
                                     "provisioningDate": null
                                 },
                                 {
-                                    "id": 36,
+                                    "id": 8,
                                     "state": "provisioning",
-                                    "product": "T3",
+                                    "product": "V3",
                                     "msisdn": {
-                                        "msisdn": "724088204"
+                                        "msisdn": "712615762"
                                     },
-                                    "iccid": "6992790926247835648",
-                                    "pcn": "42677665",
+                                    "iccid": "7551875125616788480",
+                                    "pcn": "68593938",
                                     "ported": 1,
-                                    "cvop": "816273722",
+                                    "cvop": "65065145231783",
                                     "master": 1,
                                     "jts": 0,
                                     "mkt1": 0,
                                     "mkt2": 1,
                                     "mkt3": 1,
                                     "created": null,
-                                    "modified": "2014-08-25",
+                                    "modified": "2014-09-03",
                                     "termination": null,
-                                    "provisioningDate": "2014-08-25"
+                                    "provisioningDate": "2014-09-03"
                                 }
                             ]
                         },
@@ -1932,13 +2059,13 @@ Detail existujícího zákazníka.
                         },
                         "documentList": [
                             {
-                                "id": 36,
+                                "id": 7,
                                 "documentType": 16,
                                 "documentNumber": "12345679",
                                 "documentValidTo": "2077-07-07"
                             },
                             {
-                                "id": 37,
+                                "id": 8,
                                 "documentType": 2,
                                 "documentNumber": "8430212120",
                                 "documentValidTo": "2088-08-08"
@@ -1958,14 +2085,14 @@ Vytvoření objednávky pro přidání služby k existujícímu zákazníkovi.
 
         {
             "token": "abcd1234",
-            "id": 18
+            "id": 1
         }
 
 + Response 200 (application/json)
 
         {
             "result": {
-                "orderId": 35
+                "orderId": 3
             }
         }
 
@@ -1978,7 +2105,7 @@ Vytvoření slevy u existujícího zákazníka bez slevy.
 
         {
             "token": "abcd1234",
-            "id": 19
+            "id": 2
         }
 
 + Response 200 (application/json)
@@ -1987,7 +2114,7 @@ Vytvoření slevy u existujícího zákazníka bez slevy.
             "callStatus": {
                 "finished": false,
                 "status": "created",
-                "activityId": 387
+                "activityId": 36
             },
             "result": {
         
@@ -2003,7 +2130,7 @@ Vytvoření slevy u existujícího zákazníka bez slevy - probíhající pollin
 
         {
             "token": "abcd1234",
-            "activityId": 387
+            "activityId": 36
         }
 
 + Response 200 (application/json)
@@ -2012,7 +2139,7 @@ Vytvoření slevy u existujícího zákazníka bez slevy - probíhající pollin
             "callStatus": {
                 "finished": false,
                 "status": "polling",
-                "activityId": 387
+                "activityId": 36
             },
             "result": {
         
@@ -2028,7 +2155,7 @@ Vytvoření slevy u existujícího zákazníka bez slevy - úspěšný polling.
 
         {
             "token": "abcd1234",
-            "activityId": 387
+            "activityId": 36
         }
 
 + Response 200 (application/json)
@@ -2037,7 +2164,7 @@ Vytvoření slevy u existujícího zákazníka bez slevy - úspěšný polling.
             "callStatus": {
                 "finished": true,
                 "status": "done",
-                "activityId": 387
+                "activityId": 36
             },
             "result": {
         
@@ -2053,7 +2180,7 @@ Vytvoření slevy u existujícího zákazníka bez slevy - neúspěšný polling
 
         {
             "token": "abcd1234",
-            "activityId": 387
+            "activityId": 36
         }
 
 + Response 200 (application/json)
@@ -2062,7 +2189,7 @@ Vytvoření slevy u existujícího zákazníka bez slevy - neúspěšný polling
             "callStatus": {
                 "finished": true,
                 "status": "failed",
-                "activityId": 387
+                "activityId": 36
             },
             "errors": {
                 "message": "Popis chyby."
@@ -2078,7 +2205,7 @@ Zrušení slev u existujícího zákazníka bez slevy.
 
         {
             "token": "abcd1234",
-            "id": 20
+            "id": 3
         }
 
 + Response 200 (application/json)
@@ -2087,7 +2214,7 @@ Zrušení slev u existujícího zákazníka bez slevy.
             "callStatus": {
                 "finished": false,
                 "status": "created",
-                "activityId": 405
+                "activityId": 54
             },
             "result": {
         
@@ -2103,7 +2230,7 @@ Zrušení slev u existujícího zákazníka bez slevy - probíhající polling.
 
         {
             "token": "abcd1234",
-            "activityId": 405
+            "activityId": 54
         }
 
 + Response 200 (application/json)
@@ -2112,7 +2239,7 @@ Zrušení slev u existujícího zákazníka bez slevy - probíhající polling.
             "callStatus": {
                 "finished": false,
                 "status": "polling",
-                "activityId": 405
+                "activityId": 54
             },
             "result": {
         
@@ -2128,7 +2255,7 @@ Zrušení slev u existujícího zákazníka bez slevy - úspěšný polling.
 
         {
             "token": "abcd1234",
-            "activityId": 405
+            "activityId": 54
         }
 
 + Response 200 (application/json)
@@ -2137,7 +2264,7 @@ Zrušení slev u existujícího zákazníka bez slevy - úspěšný polling.
             "callStatus": {
                 "finished": true,
                 "status": "done",
-                "activityId": 405
+                "activityId": 54
             },
             "result": {
         
@@ -2153,7 +2280,7 @@ Zrušení slev u existujícího zákazníka bez slevy - neúspěšný polling.
 
         {
             "token": "abcd1234",
-            "activityId": 405
+            "activityId": 54
         }
 
 + Response 200 (application/json)
@@ -2162,7 +2289,7 @@ Zrušení slev u existujícího zákazníka bez slevy - neúspěšný polling.
             "callStatus": {
                 "finished": true,
                 "status": "failed",
-                "activityId": 405
+                "activityId": 54
             },
             "errors": {
                 "message": "Popis chyby."
@@ -2179,7 +2306,40 @@ Seznam služeb
 + Request (application/json)
 
         {
-            "token": "abcd1234"
+            "token": "abcd1234",
+            "listingRequest": {
+                "orderBy": [
+                    {
+                        "column": "created",
+                        "direction": "desc"
+                    },
+                    {
+                        "column": "fcn",
+                        "direction": "asc"
+                    }
+                ],
+                "subset": {
+                    "offset": 0,
+                    "count": 3
+                },
+                "filter": [
+                    {
+                        "column": "msisdn",
+                        "condition": "contains",
+                        "value": "8"
+                    },
+                    {
+                        "column": "state",
+                        "condition": "equal",
+                        "value": "active"
+                    },
+                    {
+                        "column": "created",
+                        "condition": "greaterOrEqual",
+                        "value": "2014-08-23"
+                    }
+                ]
+            }
         }
 
 + Response 200 (application/json)
@@ -2188,39 +2348,42 @@ Seznam služeb
             "result": {
                 "serviceList": [
                     {
+                        "id": 19,
+                        "fcn": "10009303",
+                        "pcn": "29512739",
+                        "msisdn": "789587476",
+                        "iccid": "4075395863503217664",
+                        "product": "Volám středně",
+                        "created": "2014-09-03",
+                        "modified": "2014-09-03",
+                        "state": "active"
+                    },
+                    {
+                        "id": 11,
+                        "fcn": "22014809",
+                        "pcn": "31876331",
+                        "msisdn": "756901758",
+                        "iccid": "4059331312775611904",
+                        "product": "Volám středně",
+                        "created": "2014-09-03",
+                        "modified": "2014-09-03",
+                        "state": "active"
+                    },
+                    {
                         "id": 1,
-                        "fcn": "58344916",
-                        "pcn": "18104852",
-                        "msisdn": "797005015",
-                        "iccid": "6867696061686769606",
-                        "product": "Tariff 1",
-                        "created": "2014-08-25",
-                        "modified": "2014-08-25",
-                        "state": "active"
-                    },
-                    {
-                        "id": 2,
-                        "fcn": "58344916",
-                        "pcn": "18104852",
-                        "msisdn": "797005015",
-                        "iccid": "6867696061686769606",
-                        "product": "Tariff 2",
-                        "created": "2014-08-25",
-                        "modified": "2014-08-25",
-                        "state": "active"
-                    },
-                    {
-                        "id": 3,
-                        "fcn": "58344916",
-                        "pcn": "18104852",
-                        "msisdn": "797005015",
-                        "iccid": "6867696061686769606",
-                        "product": "Tariff 1",
-                        "created": "2014-08-25",
-                        "modified": "2014-08-25",
+                        "fcn": "47251575",
+                        "pcn": "84438804",
+                        "msisdn": "649610768",
+                        "iccid": "6384422458708286464",
+                        "product": "Volám středně",
+                        "created": "2014-09-03",
+                        "modified": "2014-09-03",
                         "state": "active"
                     }
-                ]
+                ],
+                "listingResponse": {
+                    "count": 7
+                }
             }
         }
 
@@ -2233,7 +2396,7 @@ Detail existující služby.
 
         {
             "token": "abcd1234",
-            "id": 43
+            "id": 19
         }
 
 + Response 200 (application/json)
@@ -2241,14 +2404,14 @@ Detail existující služby.
         {
             "result": {
                 "service": {
-                    "id": 43,
+                    "id": 19,
                     "state": "active",
-                    "product": "T2",
+                    "product": "V2",
                     "msisdn": {
-                        "msisdn": "729359153"
+                        "msisdn": "789587476"
                     },
-                    "iccid": "7456519983708858368",
-                    "pcn": "67621929",
+                    "iccid": "4075395863503217664",
+                    "pcn": "29512739",
                     "ported": 0,
                     "cvop": null,
                     "master": 0,
@@ -2256,13 +2419,20 @@ Detail existující služby.
                     "mkt1": 0,
                     "mkt2": 1,
                     "mkt3": 1,
-                    "created": "2014-08-25",
-                    "modified": "2014-08-25",
+                    "created": "2014-09-03",
+                    "modified": "2014-09-03",
                     "termination": null,
                     "provisioningDate": null,
-                    "fcn": "38343057",
-                    "customerId": 25
-                }
+                    "fcn": "10009303",
+                    "customerId": 10,
+                    "substateFraud": 0,
+                    "substateLost": 0
+                },
+                "actionList": [
+                    "\/v1\/service\/action\/create-change-sim-order",
+                    "\/v1\/service\/action\/create-block-order#Z",
+                    "\/v1\/service\/action\/create-block-order#F"
+                ]
             }
         }
 
@@ -2275,7 +2445,7 @@ Vytvoření objednávky pro změnu stávající SIM.
 
         {
             "token": "abcd1234",
-            "id": 41,
+            "id": 15,
             "iccid": "6867696061686769606"
         }
 
@@ -2283,7 +2453,49 @@ Vytvoření objednávky pro změnu stávající SIM.
 
         {
             "result": {
-                "orderId": 55
+                "orderId": 28
+            }
+        }
+
+## /v1/service/action/create-block-order
+
+### POST
+Vytvoření objednávky pro blokaci SIM.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 13,
+            "reason": "Z"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "orderId": 26
+            }
+        }
+
+## /v1/service/action/create-unblock-order
+
+### POST
+Vytvoření objednávky pro odblokaci SIM.
+
++ Request (application/json)
+
+        {
+            "token": "abcd1234",
+            "id": 17,
+            "reason": "Z"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "result": {
+                "orderId": 31
             }
         }
 
@@ -2297,7 +2509,26 @@ Seznam uživatelů.
 + Request (application/json)
 
         {
-            "token": "abcd1234"
+            "token": "abcd1234",
+            "listingRequest": {
+                "orderBy": [
+                    {
+                        "column": "username",
+                        "direction": "asc"
+                    }
+                ],
+                "subset": {
+                    "offset": 0,
+                    "count": 3
+                },
+                "filter": [
+                    {
+                        "column": "domain",
+                        "condition": "equal",
+                        "value": "mvno"
+                    }
+                ]
+            }
         }
 
 + Response 200 (application/json)
@@ -2308,31 +2539,34 @@ Seznam uživatelů.
                     {
                         "id": 7,
                         "username": "Automaton No.2",
-                        "firstName": "Signu",
-                        "lastName": "Ragpowyd",
+                        "firstName": "Dogro",
+                        "lastName": "Yyjewyyt",
                         "domain": "mvno",
                         "roles": "order_data_input",
                         "deleted": 0
                     },
                     {
-                        "id": 6,
-                        "username": "peer_user_admin",
-                        "firstName": "Tomáš",
-                        "lastName": "Ivanič",
+                        "id": 3,
+                        "username": "order_data_input",
+                        "firstName": "Cyril",
+                        "lastName": "Duda",
                         "domain": "mvno",
-                        "roles": "peer_user_admin",
+                        "roles": "order_data_input",
                         "deleted": 0
                     },
                     {
-                        "id": 5,
-                        "username": "order_provisioning",
-                        "firstName": "Gabriela",
-                        "lastName": "Holubová-Ivaničová",
+                        "id": 4,
+                        "username": "order_print",
+                        "firstName": "Eva",
+                        "lastName": "Fabiánová",
                         "domain": "mvno",
-                        "roles": "order_provisioning",
+                        "roles": "order_print",
                         "deleted": 0
                     }
-                ]
+                ],
+                "listingResponse": {
+                    "count": 5
+                }
             }
         }
 
@@ -2348,8 +2582,8 @@ Založení uživatele.
             "user": {
                 "username": "Automaton No.1",
                 "password": "passwd",
-                "firstName": "Yyki",
-                "lastName": "Pacvhuvf",
+                "firstName": "Dogro",
+                "lastName": "Yyjewyyt",
                 "domain": "mvno",
                 "roles": [
                     "peer_user_admin",
@@ -2391,8 +2625,8 @@ Detail uživatele.
                         "peer_user_admin"
                     ],
                     "domain": "mvno",
-                    "firstName": "Yyki",
-                    "lastName": "Pacvhuvf",
+                    "firstName": "Dogro",
+                    "lastName": "Yyjewyyt",
                     "deleted": 0
                 }
             }
@@ -2411,8 +2645,8 @@ Editace uživatele.
                 "id": 7,
                 "username": "Automaton No.2",
                 "password": "passwd",
-                "firstName": "Signu",
-                "lastName": "Ragpowyd",
+                "firstName": "Dogro",
+                "lastName": "Yyjewyyt",
                 "domain": "mvno",
                 "roles": [
                     "order_data_input"
@@ -2447,7 +2681,7 @@ Přihlášení uživatele.
 
         {
             "result": {
-                "token": "a8619821206d522286cbaf250f35305712a70134",
+                "token": "0981a14e77bad010c934d7cb81d22226ba538611",
                 "user": {
                     "id": 4,
                     "username": "order_print",
@@ -2519,19 +2753,22 @@ Seznam tarifů.
             "result": {
                 "tariffList": [
                     {
-                        "id": "T1",
-                        "name": "Fariff 1",
-                        "data": "Data den"
+                        "id": "V1",
+                        "name": "Volám málo",
+                        "data": "Málo DAT",
+                        "deleted": false
                     },
                     {
-                        "id": "T2",
-                        "name": "Tariff 2",
-                        "data": "Data den"
+                        "id": "V2",
+                        "name": "Volám středně",
+                        "data": "Málo DAT",
+                        "deleted": false
                     },
                     {
-                        "id": "T3",
-                        "name": "Tariff 3",
-                        "data": "Data nonstop"
+                        "id": "V3",
+                        "name": "Volám hodně",
+                        "data": "Volám hodně",
+                        "deleted": false
                     }
                 ]
             }
@@ -4369,4 +4606,3 @@ Seznam typů dokumentů.
                 ]
             }
         }
-
